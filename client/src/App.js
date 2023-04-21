@@ -6,13 +6,16 @@ import Signin from './components/pages/Signin';
 import Register from './components/pages/Register';
 import Game from './components/pages/Game';
 import Welcome from './components/pages/Welcome';
+import Dashboard from './components/pages/Dashboard';
+import Admin from './components/pages/Admin';
 import PrivateRoute from './components/routing/privateRoute';
+
 
 import HistoryState from './context/history/HistoryState';
 import AuthState from './context/auth/AuthState';
 import setAuthToken from './utils/setAuthToken';
 import './App.css';
-import Admin from './components/pages/Admin';
+
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -28,13 +31,14 @@ const App = () => {
           <div className='App'>
             {/* navbar component */}
             <Route exact path='/' component={Welcome} />
-            <Route exact path={['/signin', '/game' ,'/register', '/dashboard','/admin']} component={Navbar} />
+            <Route exact path={['/signin', '/game' ,'/register', '/dashboard','/admin','/result']} component={Navbar} />
             <div className='Routes'>
               {/* private/public routes for app */}
               <Switch>
                 <PrivateRoute exact path='/dashboard' component={Home} />
                 <Route exact path='/signin' component={Signin} />
                 <PrivateRoute exact path='/admin'  component={Admin} />
+                <PrivateRoute exact path='/result' component={Dashboard} />
                 <Route exact path='/register' component={Register} />
                 <PrivateRoute exact path='/game' component={Game} />
               </Switch>

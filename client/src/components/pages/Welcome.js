@@ -7,7 +7,7 @@ import {
   HeroContent,
   HeroItems,
   HeroBtn,
-} from './WelcomeElements';
+} from '../../assets/css/WelcomeElements';
 
 const Welcome = () => {
   // declare and destructure authContext

@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import AuthContext from '../../context/auth/authContext';
+import '../../assets/css/auth.css'
 
 // bring in props, declare authContext and destructure
 const Signin = (props) => {
@@ -44,47 +45,36 @@ const Signin = (props) => {
   };
 
   return (
-    // materializeCSS form
-    <div className='container form-container'>
-      <div className='row'>
-        <form className='col s6' autoComplete='off' onSubmit={onSubmit}>
-          <div className='row'>
-            <div className='input-field col s9 offset-s8'>
-              <input
-                id='email'
-                type='text'
-                className='validate'
-                onChange={onChange}
-                required
-              ></input>
-              <label htmlFor='email'>Email</label>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='input-field col s9 offset-s8'>
-              <input
-                id='password'
-                type='password'
-                className='validate'
-                onChange={onChange}
-                required
-              ></input>
-              <label htmlFor='password'>Password</label>
-            </div>
-          </div>
-          <div className='row'>
-            <button
-              className='btn waves-effect waves-light red lighten-2 col s9 m5 offset-s8 offset-m10'
-              type='submit'
-              name='action'
-            >
-              Sign In
-              <i className='material-icons right'>send</i>
-            </button>
-          </div>
-        </form>
+    <div className='auth-container'>
+    <h2 className='login-title'>Log in</h2>
+    <form className='login-form' autocomplete='off' onSubmit={onSubmit}>
+      <div>
+        <label htmlFor='email'>Email </label>
+        <input
+               id='email'
+               type='email'
+               placeholder='me@example.com'
+               onChange={onChange}
+               required
+               />
       </div>
-    </div>
+
+      <div>
+        <label htmlFor='password'>Password </label>
+        <input
+               id='password'
+               type='password'
+               placeholder='password'
+               onChange={onChange}
+               required
+               />
+      </div>
+
+      <button className='btn btn--form' type='submit' name='action'>
+        Log in
+      </button>
+    </form>
+</div>
   );
 };
 

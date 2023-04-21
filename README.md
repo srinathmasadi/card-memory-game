@@ -1,0 +1,16 @@
+# Memory Game Web App
+Web app similar to memory board game. Create an account, choose a difficulty level, choose a card theme, and find all the pairs of cards! User score will update after each game.
+
+There is an admin feature where-in admin can view all the player's score and also can able to create other admin's using the private routes.
+
+# Motivation
+To build a full stack MERN app from scratch equipt with user sign in. To practice building backend server and connecting to front end. To practice using state management in a React app.
+
+# Tech Used
+* HTML, CSS, MaterializeCSS, JS, React for front end
+* MongoDB, Express, Node, Mongoose for backend
+* Context API for state management
+* Nodemon and Concurrently for development
+* JWToken and Bcrypt for hashing passwords
+* Robohash for card images
+* Axios for image API requests

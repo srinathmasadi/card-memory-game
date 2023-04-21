@@ -21,6 +21,13 @@ const Navbar = () => {
           <Link to='/admin'>Create Admin</Link>
         </li>
       )}
+      {
+        isAdmin && (
+          <li>
+            <Link to='/result'>Results</Link>
+          </li>
+        )
+      }
       <li>Hello, {user}!</li>
       <li onClick={onLogOut}>
         <Link to='/'>Sign Out</Link>

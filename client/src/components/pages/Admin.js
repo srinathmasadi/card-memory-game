@@ -47,59 +47,45 @@ const Admin = (props) => {
   };
 
   return (
-    // materialize CSS form
-    <div className='container form-container'>
-      <div className='row'>
-        <form className='col s6' onSubmit={onSubmit}>
-          <div className='row'>
-            <div className='input-field col s9 offset-s8'>
-              <input
-                id='name'
-                type='text'
-                className='validate'
-                onChange={onChange}
-                required
-              />
-              <label htmlFor='user-name'>Username</label>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='input-field col s9 offset-s8'>
-              <input
-                id='email'
-                type='email'
-                className='validate'
-                onChange={onChange}
-                required
-              />
-              <label htmlFor='email'>Email</label>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='input-field col s9 offset-s8'>
-              <input
-                id='password'
-                type='password'
-                className='validate'
-                onChange={onChange}
-                required
-              />
-              <label htmlFor='password'>Password</label>
-            </div>
-          </div>
-          <div className='row'>
-            <button
-              className='btn waves-effect waves-light red lighten-2 col s9 m5 offset-s8 offset-m10'
-              type='submit'
-              name='action'
-            >
-              Register
-              <i className='material-icons right'>send</i>
-            </button>
-          </div>
-        </form>
+    <div className='auth-container'>
+    <h2 className='login-title'>Create Admin</h2>
+    <form className='login-form' autocomplete='off' onSubmit={onSubmit}>
+    <div>
+        <label htmlFor='name'>Name </label>
+        <input
+               id='name'
+               type='text'
+               placeholder='Eren Buruk'
+               onChange={onChange}
+               required
+               />
       </div>
-    </div>
+      <div>
+        <label htmlFor='email'>Email </label>
+        <input
+               id='email'
+               type='email'
+               placeholder='me@example.com'
+               onChange={onChange}
+               required
+               />
+      </div>
+
+      <div>
+        <label htmlFor='password'>Password </label>
+        <input
+               id='password'
+               type='password'
+               placeholder='password'
+               onChange={onChange}
+               required
+               />
+      </div>
+      <button className='btn btn--form' type='submit' name='action'>
+        Add Admin
+      </button>
+    </form>
+</div>
   );
 };
 
