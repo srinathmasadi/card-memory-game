@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import AuthContext from '../../context/auth/authContext';
 import '../../assets/css/auth.css'
+import bgImg from '../../assets/Images/auth.jpg'
 
 // bring in props, declare authContext and destructure
 const Signin = (props) => {
@@ -75,6 +76,7 @@ const Signin = (props) => {
       </button>
     </form>
 </div>
+
   );
 };
 

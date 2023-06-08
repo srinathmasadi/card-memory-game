@@ -1,0 +1,27 @@
+nav {
+    background: linear-gradient(231.31deg, #6a7bcb 8.73%, #05100F 85.72%);
+    height: 70px;
+  }
+  
+  .nav-wrapper {
+    padding: 0 20px;
+  }
+  
+  .brand-logo {
+    font-size: 28px;
+    font-weight: 500;
+    color: #fff;
+  }
+  
+  nav ul li a {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 0 20px;
+  }
+  
+  nav ul li a:hover {
+    color: #f9ac66;
+  }
+  

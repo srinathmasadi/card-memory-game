@@ -6,7 +6,7 @@
   }
   
   html {
-    background: linear-gradient(to right bottom, #fbdb89, #f48982);
+    background: linear-gradient(231.31deg, #6a7bcb 8.73%, #05100F 85.72%);
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
@@ -52,10 +52,8 @@
   }
   
   .btn--form {
-    background-color: #f48982;
+    background-color: #273057;
     color: #fdf2e9;
-    align-self: end;
-    padding: 8px;
   }
   
   .btn,
@@ -75,11 +73,11 @@
   }
   
   button {
-    outline: 1px solid #f48982;
+    outline: 1px solid  #05100F;
   }
   
   .btn--form:hover {
-    background-color: #fdf2e9;
-    color: #f48982;
+    background-color: #4d5a96;
+    color: #fdf2e9;
   }
   

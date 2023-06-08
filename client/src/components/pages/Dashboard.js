@@ -2,6 +2,9 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../assets/css/dashboard.css'
 import AuthContext from '../../context/auth/authContext';
+import leftArrw from '../../assets/Images/arrow-left-solid.svg';
+import rightArrw from '../../assets/Images/arrow-right-solid.svg'
+import glass from '../../assets/Images/magnifying-glass-solid.svg'
 
 const Dashboard = () => {
   // declare authContext, and destructure authContext
@@ -68,15 +71,20 @@ const Dashboard = () => {
 
   return (
     <div className="table-container">
-      <h1>Results of Players Played So Far</h1>
+      
+      <div className='search-main'>
       <div className="search-container">
-        <input
-          type="text"
-          placeholder="Search by username"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+      {/* <img src={glass} alt="SVG as an image" /> */}
+  <input
+    type="text"
+    placeholder="Search by username"
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+</div>
       </div>
+      
+
       <div className="table-wrapper">
         <table>
           <thead>
@@ -102,23 +110,26 @@ const Dashboard = () => {
           </tbody>
         </table>
       </div>
-	<div className="pagination">
-  <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
-    <span className="fi fi-previous"></span>
-  </button>
-  {Array.from({ length: Math.ceil(Object.keys(userStats).length / usersPerPage) }, (_, i) => (
-    <button
-      key={i}
-      onClick={() => paginate(i + 1)}
-      className={currentPage === i + 1 ? "active" : ""}
-    >
-      {i + 1}
-    </button>
-  ))}
-  <button onClick={handleNextClick} disabled={currentPage === Math.ceil(Object.keys(userStats).length / usersPerPage)}>
-  <span className="fi fi-arrows-horizontal"></span>
-</button>
-</div>
+      <div className='parent-page'>
+              <div className="pagination">
+          <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>
+            <span className="fi fi-previous"></span>
+          </button>
+          {Array.from({ length: Math.ceil(Object.keys(userStats).length / usersPerPage) }, (_, i) => (
+            <button
+              key={i}
+              onClick={() => paginate(i + 1)}
+              className={currentPage === i + 1 ? "active" : ""}
+            >
+              {i + 1}
+            </button>
+          ))}
+          <button onClick={handleNextClick} disabled={currentPage === Math.ceil(Object.keys(userStats).length / usersPerPage)}>
+          <span className="fi fi-arrows-horizontal"></span>
+        </button>
+        </div>
+      </div>
+	
 
 </div>
   );
